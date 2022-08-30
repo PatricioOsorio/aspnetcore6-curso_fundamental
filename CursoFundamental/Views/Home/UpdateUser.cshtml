@@ -1,0 +1,37 @@
+﻿@model CursoFundamental.Models.User
+
+@{
+  ViewData["Title"] = "Editar Usuario";
+}
+
+<h1>Editar usuario</h1>
+
+<a class="link-primary mb-3" asp-action="Index">Volver</a>
+
+<form asp-action="UpdateUser" method="post" enctype="multipart/form-data">
+  <div class="text-danger" asp-validation-summary="All"></div>
+
+  @*Se enviar el Id del usuario como oculto*@
+  <input type="hidden" asp-for="Id"  />
+
+  <div class="mb-3">
+    <label class="form-label" asp-for="Name"></label>
+    <input class="form-control" asp-for="Name">
+    <span class="text-danger" asp-validation-for="Name"></span>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" asp-for="PhoneNumber"></label>
+    <input class="form-control" asp-for="PhoneNumber">
+    <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" asp-for="Email"></label>
+    <input class="form-control" asp-for="Email">
+    <span class="text-danger" asp-validation-for="Email"></span>
+  </div>
+
+  <button class="btn btn-warning" type="submit">Editar usuario</button>
+
+</form>
